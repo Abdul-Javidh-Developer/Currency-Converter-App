@@ -21,10 +21,14 @@ function convertCurrency() {
     };
 
     // Validate input
-    if (isNaN(amount) || amount <= 0) {
-        alert('Please enter a valid amount');
+      if (isNaN(amount) || amount <= 0) {
+        resultDiv.textContent = "Please enter a Valid amount";
+        resultDiv.style.display = "block";
         return;
+    } else{
+         resultDiv.style.display = "none";
     }
+    
 
     // Convert amount to USD and then to the target currency
     const amountInUSD = amount / exchangeRates[fromCurrency];
